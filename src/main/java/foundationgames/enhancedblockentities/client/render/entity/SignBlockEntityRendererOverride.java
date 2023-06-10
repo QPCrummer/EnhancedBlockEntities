@@ -51,7 +51,7 @@ public class SignBlockEntityRendererOverride extends BlockEntityRendererOverride
                 }
 
                 matrices.translate(0.0, -0.3125, 0.0);
-                textRenderer.enhanced_bes$renderText(be, matrices, vertexConsumers, light, 1);
+                textRenderer.enhanced_bes$renderText(be.getPos(), be.getTextFacing(MinecraftClient.getInstance().player), matrices, vertexConsumers, light, be.getTextLineHeight(), be.getMaxTextWidth(), be.isPlayerFacingFront(MinecraftClient.getInstance().player));
             } else {
                 if (state.getBlock() instanceof SignBlock) {
                     matrices.translate(0.5, 0.5, 0.5);
@@ -64,7 +64,7 @@ public class SignBlockEntityRendererOverride extends BlockEntityRendererOverride
                     matrices.translate(0.0, -0.3125, -0.4375);
                 }
 
-                textRenderer.enhanced_bes$renderText(be, matrices, vertexConsumers, light, 2f/3);
+                textRenderer.enhanced_bes$renderText(be.getPos(), be.getTextFacing(MinecraftClient.getInstance().player), matrices, vertexConsumers, light, be.getTextLineHeight(), be.getMaxTextWidth(), be.isPlayerFacingFront(MinecraftClient.getInstance().player));
             }
         }
     }
